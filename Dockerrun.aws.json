@@ -1,0 +1,41 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "environment": [
+          {
+            "name": "PORT",
+            "value": "80"
+          }
+        ],
+        "essential": true,
+        "image": "AWS_ID.dkr.ecr.REGION_CODE.amazonaws.com/solucao-carrefour:latest",
+        "memory": 256,
+        "cpu": 1024,
+        "mountPoints": [
+          {
+            "containerPath": "/var/www/api",
+            "sourceVolume": "solucao-carrefour"
+          }
+        ],
+        "name": "solucao-carrefour",
+        "portMappings": [
+          {
+            "containerPort": 80,
+            "hostPort": 80
+          }
+        ]
+      }
+    ],
+    "networkMode": "awsvpc",
+    "compatibilities": ["EC2", "FARGATE"],
+    "requiresCompatibilities": ["EC2", "FARGATE"],
+    "volumes": [
+      {
+        "host": {
+          "sourcePath": "solucao-carrefour"
+        },
+        "name": "solucao-carrefour"
+      }
+    ]
+  }
