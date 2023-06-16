@@ -49,18 +49,6 @@ $ yarn run start:prod
 
 ```bash
 $ docker-compose up -d --build
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
 
 ## Support
